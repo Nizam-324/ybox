@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Poppins"; */
+  font-family: 'Nunito Sans';
+}
+/* *::-webkit-scrollbar{
+  width: 2px;
+} */
+::-webkit-scrollbar {
+  width: 3px;
+  position: absolute;
+  left: 0;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff0e;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffffff87;
+  border-radius: 18px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffffbb;
+}
+body{
+  background-image: url(/bg.png);
+  background-size: 40%;
+  /* background-repeat: no-repeat; */
+  background-position: center;
+  /* background-color: #002662; */
+  background-color: #004dc8;
+
+  /* background-color: #003a85; */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.container{
+  width: 85vw;
+  height: 90vh;
+  background-color: #01317f;
+  background-color: rgba(4, 30, 72, .8);
+  /* background-color: rgb(1, 49, 127, .7); */
+  border-radius: 10px;
+
+  display: flex;
+}
+
+.loading{
+  padding: 50px;
+  
+  border-radius: 10px;
+  background-color: rgba(4, 30, 72, .8);
+
+  span{
+    font-size: 100px;
+    animation: loading 5s infinite linear;
+  }
+  @keyframes loading {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+}
+
+
+/* Medium devices (landscape tablets and large phones) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    
+  .container{
+    width: 100dvw;
+    height: 100dvh;
+    border-radius: 0;
+
+  }  
+
+}

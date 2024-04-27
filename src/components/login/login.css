@@ -1,0 +1,206 @@
+.login{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .background{
+        height: 100%;
+        flex: 1;
+        /* margin:  20px; */
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        background-image: url(/chat-bg.png);
+
+            img{
+                width: 300px;
+            }
+
+            h1{
+                color: #d2e3ff;
+                margin-top: -30px;
+                font-weight: 400;
+                font-size: 90px;
+                letter-spacing: 5px;
+                font-family: 'Bebas Neue';
+
+                span{
+                    font-family: 'Bebas Neue';
+                    font-size: 65px;
+                }
+            }
+
+    }
+
+    .login-signup{
+        height: 100%;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .authTabs{
+            flex: 42%;
+            /* width: 50%; */
+            display: flex;
+            align-items: center;
+            padding: 10px;
+    
+            .tabs{
+                width: fit-content;
+                display: flex;
+                margin: 0 auto;
+                justify-content: center;
+                background-color: rgba(4, 30, 72, .8);
+                padding: 5px;
+                gap: 5px;
+                border-radius: 36px;
+            
+                .loginTab, .signupTab{
+                    /* background-color: rgba(4, 30, 72, .8); */
+                    padding: 10px 90px;
+                    border-radius: 36px;
+                    font-weight: 500;
+                    cursor: pointer;
+    
+                    &.active{
+                        background-color: #004bc5cc;
+                        
+                    }
+                }
+            }
+        }
+
+        .item{
+            flex: 100%;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+    
+            &.show{
+                display: flex;
+            }
+            
+            h2{
+                font-size: 34px;
+            }
+            
+            form{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+    
+                &.signup{
+                    flex-direction: row;
+                    gap: 20px;
+                    justify-content: flex-start;
+                    width: -webkit-fill-available;
+                }
+    
+                span{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                }
+    
+                input{
+                    width: 210px;
+                    padding: 12px;
+                    border: none;
+                    outline: none;
+                    background-color: rgba(4, 30, 72, .8);
+                    color: #fff;
+                    border-radius: 5px;
+                }
+    
+                label{
+                    width: 100%;
+                    /* background-color: #004bc5cc;
+                    padding: 10px;
+                    text-align: center;
+                    border-radius: 5px; */
+    
+                    display: flex;
+                    align-items: flex-end;
+                    cursor: pointer;
+                    /* text-decoration: underline; */
+                    justify-content: center;
+                    /* text-decoration: underline; */
+    
+                    i{
+                        background-color: rgba(0, 79, 206, 0.8);
+                        padding: 8px;
+                        border-radius: 10px 0 10px 0;
+                        margin-left: -40px;
+                    }
+    
+                    img{
+                        width: 166px;
+                        height: 166px;
+                        object-fit: cover;
+                        border-radius: 10px;
+                        background-color: rgba(4, 30, 72, .8);
+                    }
+                }
+    
+                button{
+                    width: 100%;
+                    padding: 12px;
+                    border: none;
+                    background-color: #004bc5cc;
+                    color: #fff;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-weight: 500;
+    
+                    &:disabled{
+                        cursor: not-allowed;
+                        background-color: #1d6ff4cc;
+                    }
+                }
+            }
+    
+        }
+    }
+
+    
+    /* .separator{
+        height: 80%;
+        width: 2px;
+        background-color: #dddddd35;
+    } */
+}
+
+/* Medium devices (landscape tablets and large phones) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    
+    .authTabs{
+        flex: 18% !important;
+
+        .loginTab, .signupTab{
+            padding: 10px 50px !important;
+                
+            }
+    }
+    
+    
+    .item{
+        gap: 25px !important;
+
+        form{
+
+            &.signup{
+                flex-direction: column !important;
+            }
+        }
+    }
+        
+        
+
+}

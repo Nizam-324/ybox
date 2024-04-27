@@ -1,0 +1,130 @@
+.userInfo{
+    padding: 17px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    /* background-color: rgba(4, 30, 72, .8); */
+    border-radius: 10px 0 0 0;
+    border-bottom: 1px solid #dddddd35;
+    gap: 20px;
+
+    .current-user{
+        display: flex;
+        align-items: center;
+        width: -webkit-fill-available;
+        flex: 1;
+        justify-content: space-between;
+
+        .user{
+            display: flex;
+            flex: 1;
+            align-items: center;
+            gap: 10px;
+        
+            img{
+                height: 55px;
+                width: 55px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            h2{
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+            p{
+                font-size: 13px;
+                color: #a5a5a5;
+            }
+        }
+    
+        .icons{ 
+            display: flex;
+            gap: 10px;
+    
+            i{
+                font-size: 21px;
+                cursor: pointer;
+                /* background-color: rgba(3, 55, 139, 0.622); */
+                background-color: rgba(4, 30, 72, .5);
+                padding: 5px;
+                border-radius: 5px;
+                transition: .4s;
+    
+                &:hover{
+                    /* background-color: rgba(4, 30, 72, .8); */
+                    transform: translateY(-3px);
+                }
+            }
+        }
+
+    }
+
+    
+
+    .item{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+
+            input{
+                padding: 12px;
+                border: none;
+                outline: none;
+                background-color: rgba(4, 30, 72, .8);
+                color: #fff;
+                border-radius: 5px;
+            }
+
+            label{
+                width: 100%;
+                display: flex;
+                align-items: flex-end;
+                cursor: pointer;
+                justify-content: center;
+
+                i{
+                    background-color: rgba(0, 79, 206, 0.8);
+                    padding: 8px;
+                    border-radius: 10px 0 10px 0;
+                    margin-left: -40px;
+                }
+
+                img{
+                    width: 154px;
+                    height: 154px;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+            }
+
+            button{
+                width: 100%;
+                padding: 12px;
+                border: none;
+                background-color: #004bc5cc;
+                color: #fff;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: 500;
+
+                &:disabled{
+                    cursor: not-allowed;
+                    background-color: #1d6ff4cc;
+                }
+            }
+        }
+
+    }
+
+  
+}
