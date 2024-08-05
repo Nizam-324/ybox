@@ -191,6 +191,10 @@
         gap: 20px;
         margin-top: auto;
 
+        .icon-show-btn-tabmob{
+            display: none;
+        }
+
         .icons{
             display: flex;
             gap: 10px;
@@ -248,7 +252,7 @@
         .sendButton{
             background-color: #004bc5cc;
             color: #fff;
-            padding: 10px 20px;
+            padding: 10px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -256,6 +260,38 @@
             &:disabled{
                 cursor: not-allowed;
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 834px) {
+    .bottom{
+        padding: 20px !important;
+        gap: 20px !important;
+
+        .icon-show-btn-tabmob{
+            display: unset !important;
+        }
+
+        .icons{
+            display: none !important;
+
+            &.showIcons{
+                display: grid !important;
+                position: absolute;
+                bottom: 85px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .bottom{
+        padding: 15px !important;
+        gap: 10px !important;
+
+        i{
+            font-size: 24px !important;
         }
     }
 }

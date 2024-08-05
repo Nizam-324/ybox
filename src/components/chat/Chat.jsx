@@ -19,16 +19,10 @@ const Chat = () => {
         url: "",
     });
 
-    //////////////////////
-
     const [showDetails, setShowDetails] = useState(false);
 
-    // const [hideChat, setHideChat] = useState(true);
-
-    ///////////////////////////////
-
     const { currentUser } = useUserStore();
-    const { chatId, user, isCurrentUserBlocked, isReceiverBlocked } = useChatStore();
+    const { chatId, user, isCurrentUserBlocked, isReceiverBlocked, changeChat } = useChatStore();
 
     const endRef = useRef(null);
 
@@ -150,7 +144,7 @@ const Chat = () => {
     // };
 
     const formatTime = (timestamp) => {
-        const date = new Date(timestamp.seconds * 1000); // Convert seconds to milliseconds
+        const date = new Date(timestamp.seconds * 1000); 
         const options = {
             hour: "numeric",
             minute: "numeric",
@@ -159,15 +153,23 @@ const Chat = () => {
         return date.toLocaleString("en-US", options);
     };
 
+    const handleBackClick = () => {
+        changeChat(null, null);
+    };
+
+    const [showIconTabMob, setShowIconTabMob] = useState(false)
+
     return (
         // <>{hideChat && (
         <div className="chat">
             <div className={showDetails ? "top details-show" : "top"}>
 
-            {/* <i className="material-symbols-outlined" onClick={() => setHideChat((prev) => !prev)} >arrow_back</i> */}
+            {/* <i className="material-symbols-outlined" onClick={handleBackClick} >arrow_back</i> */}
 
                 {!showDetails && (
                 <div className="user">
+                    <i className="material-symbols-outlined" onClick={handleBackClick} >arrow_back</i>
+
                     <img src={user?.profAvatar || "./avatar.png"} alt="" />
                     <div className="texts">
                         <span>{user?.username}</span>
@@ -234,7 +236,12 @@ const Chat = () => {
                 <div id="bottom" ref={endRef}></div>
             </div>
             <div className="bottom">
-                <div className="icons">
+                <div className="icon-show-btn-tabmob">
+                    <i className="material-symbols-outlined icon-show-btn"
+                        onClick={() => setShowIconTabMob((prev) => !prev)}
+                    >ios_share</i>
+                </div>
+                <div className={showIconTabMob ? " icons showIcons" : "icons"}>
                     <label htmlFor="file">
                         <i className="material-symbols-outlined">photo_library</i>
                     </label>
@@ -251,7 +258,7 @@ const Chat = () => {
                     disabled={isCurrentUserBlocked || isReceiverBlocked}
                 />
 
-                <div className="emoji">
+                <div className="emoji" style={{display: "none"}}>
                     <i className="material-symbols-outlined" onClick={() => setOpenEmoji((prev) => !prev)}>
                         sentiment_satisfied
                     </i>
@@ -259,8 +266,8 @@ const Chat = () => {
                         <EmojiPicker open={openEmoji} onEmojiClick={handleEmoji} />
                     </div>
                 </div>
-                <button className="sendButton" onClick={file.file ? handleSend : msgText ? handleSendText : undefined} disabled={isCurrentUserBlocked || isReceiverBlocked}>
-                    Send
+                <button className="sendButton material-symbols-outlined" onClick={file.file ? handleSend : msgText ? handleSendText : undefined} disabled={isCurrentUserBlocked || isReceiverBlocked}>
+                send
                 </button>
             </div>
             </>

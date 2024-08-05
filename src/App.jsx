@@ -27,15 +27,17 @@ const App = () => {
         };
     }, [fetchUserInfo]);
  
-    console.log(currentUser);
-
+ 
     if (isLoading) return <div className="loading"><span className=" material-symbols-outlined">progress_activity</span></div>;
+
+    const isTabMob = window.innerWidth <= 834
 
     return (
         <div className="container">
             {currentUser ? (
                 <>
-                    <List />
+                    {isTabMob && !chatId && <List />}
+                    {!isTabMob && <List/>}
                     {chatId && <Chat />}
                     {/* {chatId && <Details />} */}
                 

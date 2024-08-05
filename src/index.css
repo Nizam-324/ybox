@@ -16,7 +16,7 @@
   left: 0;
 }
 ::-webkit-scrollbar-track {
-  background: #ffffff0e;
+  background: #ffffff0e; 
 }
 ::-webkit-scrollbar-thumb {
   background: #ffffff87;
@@ -75,8 +75,7 @@ body{
 }
 
 
-/* Medium devices (landscape tablets and large phones) */
-@media only screen and (min-width: 481px) and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
     
   .container{
     width: 100dvw;
@@ -86,3 +85,16 @@ body{
   }  
 
 }
+
+/* Medium devices (landscape tablets and large phones) */
+@media only screen and (max-width: 834px) {
+    
+  .container{
+    width: 100dvw;
+    height: 100dvh;
+    border-radius: 0;
+
+  }  
+
+}
+

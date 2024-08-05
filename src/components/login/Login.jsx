@@ -130,7 +130,7 @@ const Login = () => {
                         </label>
                         <input type="file" id="file" hidden onChange={handleProfAvatar} />
 
-                        <input type="text" placeholder="Username" name="username" required />
+                        <input type="text" placeholder="Username" name="username" onChange={(event) => event.target.value = event.target.value.toLowerCase()} required />
                     </span>
                     
                     <span className="right">
