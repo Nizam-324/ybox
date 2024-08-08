@@ -46,11 +46,9 @@ body{
 .container{
   width: 85vw;
   height: 90vh;
-  background-color: #01317f;
-  background-color: rgba(4, 30, 72, .8);
-  /* background-color: rgb(1, 49, 127, .7); */
+  background-color: #041e48cc;
   border-radius: 10px;
-
+position: relative;
   display: flex;
 }
 
@@ -78,8 +76,8 @@ body{
 @media only screen and (max-width: 1024px) {
     
   .container{
-    width: 100dvw;
-    height: 100dvh;
+    width: 100dvw !important;
+    height: 100dvh !important;
     border-radius: 0;
 
   }  
@@ -90,9 +88,9 @@ body{
 @media only screen and (max-width: 834px) {
     
   .container{
-    width: 100dvw;
+    width: 100dvw !important;
     height: 100dvh;
-    border-radius: 0;
+    border-radius: 0 !important;
 
   }  
 

@@ -14,9 +14,9 @@ const Login = () => {
 
     const [loading, setLoading] = useState(false);
 
-    const [toggle, setToggle] = useState(1)
+    const [toggle, setToggle] = useState(1);
     function updateToggle(id) {
-        setToggle(id)
+        setToggle(id);
     }
 
     const handleProfAvatar = (e) => {
@@ -91,57 +91,63 @@ const Login = () => {
         }
     };
 
+    const [showAuth, setShowAuth] = useState(false)
+    // const isTabMob = window.innerWidth <= 834
+
     return (
         <div className="login">
-
-            <div className="background">
-                    <img src="./logo.png" alt="" />
-                    {/* <h1><span>Y</span>B<span>ox</span></h1> */}
-                    <h1><span>Y</span>Box</h1>
-                
+            <div className={showAuth ? "bg-hide background" : "background"}>
+                <img src="./logo.png" alt="" />
+                <h1>
+                    <span>Y</span>Box
+                </h1>
+                <p className="tag-line">Secure &#x2022; Simple &#x2022; Connect</p>
+                {!showAuth && <button className="get-start" onClick={() => setShowAuth(true)}>Start Chat</button>}
             </div>
 
-            <div className="login-signup">
-
-            <div className="authTabs">
-                <div className="tabs">
-                    <div className={toggle === 1 ? "loginTab active" : "loginTab"} onClick={() => updateToggle(1)} >Login</div>
-                    <div className={toggle === 2 ? "signupTab active" : "signupTab"} onClick={() => updateToggle(2)} >Sigup</div>
+            <div className= "login-signup" style={showAuth ? {display: "flex"} : {}}>
+                <div className="authTabs">
+                    <div className="tabs">
+                        <div className={toggle === 1 ? "loginTab active" : "loginTab"} onClick={() => updateToggle(1)}>
+                            Login
+                        </div>
+                        <div className={toggle === 2 ? "signupTab active" : "signupTab"} onClick={() => updateToggle(2)}>
+                            Signup
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-
-            <div className={toggle === 1 ? "item show": "item"} >
-                <h2>Welcome back,</h2>
-                <form onSubmit={handleLogin}>
-                    <input type="email" name="email" placeholder="Email" required />
-                    <input type="password" name="password" placeholder="Password" required />
-                    <button disabled={loading}>{loading ? "Loading" : "Sign In"}</button>
-                </form>
-            </div>
-            
-            <div className={toggle === 2 ? "item show": "item"} >
-                <h2>Create an account</h2>
-                <form onSubmit={handleRegister} className="signup">
-                    <span className="left">
-                        <label htmlFor="file">
-                            <img src={profAvatar.url || "./avatar.png"} alt="" />
-                            <i className="material-symbols-outlined">add_photo_alternate</i>
-                        </label>
-                        <input type="file" id="file" hidden onChange={handleProfAvatar} />
-
-                        <input type="text" placeholder="Username" name="username" onChange={(event) => event.target.value = event.target.value.toLowerCase()} required />
-                    </span>
-                    
-                    <span className="right">
-                        <input type="text" placeholder="About" name="about" required />
+                <div className={toggle === 1 ? "item show" : "item"}>
+                    <h2>Welcome back,</h2>
+                    <form onSubmit={handleLogin}>
                         <input type="email" name="email" placeholder="Email" required />
                         <input type="password" name="password" placeholder="Password" required />
+                        <button disabled={loading}>{loading ? "Loading" : "Sign In"}</button>
+                    </form>
+                </div>
 
-                        <button disabled={loading}>{loading ? "Loading" : "Sign Up"}</button>
-                    </span>
-                </form>
-            </div>
+                <div className={toggle === 2 ? "item show" : "item"}>
+                    <h2>Create an account</h2>
+                    <form onSubmit={handleRegister} className="signup">
+                        <span className="left">
+                            <label htmlFor="file">
+                                <img src={profAvatar.url || "./avatar.png"} alt="" />
+                                <i className="material-symbols-outlined">add_photo_alternate</i>
+                            </label>
+                            <input type="file" id="file" hidden onChange={handleProfAvatar} />
+
+                            <input type="text" placeholder="Username" name="username" onChange={(event) => (event.target.value = event.target.value.toLowerCase())} required />
+                        </span>
+
+                        <span className="right">
+                            <input type="text" placeholder="About" name="about" required />
+                            <input type="email" name="email" placeholder="Email" required />
+                            <input type="password" name="password" placeholder="Password" required />
+
+                            <button disabled={loading}>{loading ? "Loading" : "Sign Up"}</button>
+                        </span>
+                    </form>
+                </div>
             </div>
         </div>
     );

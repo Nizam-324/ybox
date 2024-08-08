@@ -8,6 +8,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./lib/firebase";
 import { useUserStore } from "./lib/userStore";
 import { useChatStore } from "./lib/chatStore";
+import AboutInfo from "./components/aboutInfo/AboutInfo";
 
 // import { ToastContainer } from "react-toastify"
 // import 'react-toastify/ReactToastify.css'
@@ -43,7 +44,10 @@ const App = () => {
                 
                 </>
             ) : (
-                <Login />
+                <>
+                    <Login />
+                    <AboutInfo/>
+                </>
             )}
 
             <Notification />

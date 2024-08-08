@@ -15,6 +15,19 @@
         align-items: center;
         background-image: url(/chat-bg.png);
 
+        .get-start{
+            display: unset;
+            padding: 10px 30px;
+            background-color: aqua;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            background-color: #004bc5cc;
+            color: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
             img{
                 width: 300px;
             }
@@ -33,12 +46,17 @@
                 }
             }
 
+            .tag-line{
+                margin-bottom: 30px;
+                font-size: 22px;
+            }
+
     }
 
     .login-signup{
         height: 100%;
         flex: 1;
-        display: flex;
+        display: none;
         align-items: center;
         flex-direction: column;
 
@@ -178,29 +196,51 @@
 }
 
 /* Medium devices (landscape tablets and large phones) */
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-    
-    .authTabs{
-        flex: 18% !important;
+@media only screen and (max-width: 834px) {
 
-        .loginTab, .signupTab{
-            padding: 10px 50px !important;
-                
-            }
-    }
-    
-    
-    .item{
-        gap: 25px !important;
+    .login{
+        display: grid;
 
-        form{
+        .background{
+            height: 100dvh;
 
-            &.signup{
-                flex-direction: column !important;
+            &.bg-hide{
+                display: none;
             }
         }
-    }
-        
-        
+    
+        .login-signup{
+            display: none;
+            /* padding: 40px 0; */
+
+            &.show-auth{
+                display: flex;
+            }
+
+            .authTabs{
+                flex: 0;
+                margin: 50px 0 10px 0;
+
+                .tabs{
+
+                    .loginTab, .signupTab{
+                        padding: 10px 50px;
+                    }
+                }
+            }
+
+            .item{
+                gap: 20px;
+
+                form{
+
+                    &.signup{
+                        flex-direction: column;
+                    }
+
+                }
+            }
+        }
+    }   
 
 }
