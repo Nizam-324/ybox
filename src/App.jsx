@@ -34,7 +34,7 @@ const App = () => {
     const isTabMob = window.innerWidth <= 834
 
     return (
-        <div className="container">
+        <div className="container" style={isTabMob ? {height: "100dvh"}:{}}>
             {currentUser ? (
                 <>
                     {isTabMob && !chatId && <List />}
